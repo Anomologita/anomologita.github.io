@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomologita</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1, .title-button {
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        .search-input {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .button-1 {
+            background: linear-gradient(45deg, #ff6f61, #ff9472);
+        }
+        .button-2 {
+            background: linear-gradient(45deg, #42e695, #3bb2b8);
+        }
+        .button-3 {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+        }
+        .button-4 {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+        .button-5 {
+            background: linear-gradient(45deg, #a18cd1, #fbc2eb);
+        }
+        .button:hover {
+            filter: brightness(1.1);
+        }
+        footer {
+            text-align: center;
+            width: 100%;
+            color: #555;
+            margin-top: auto;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="title-button">
+        <h1>ΑΝΟΜΟΛΟΓΗΤΑ</h1>
+    </a>
+    <div class="search-container">
+        <input type="text" class="search-input" id="searchInput" onkeyup="filterButtons()" placeholder="Αναζήτηση...">
+    </div>
+    <div class="button-container" id="buttonContainer">
+        <a href="epirus.html" class="button button-2">Ήπειρος</a>
+        <a href="page13.html" class="button button-3">Μακεδονία</a>
+        <a href="page14.html" class="button button-4">Θράκη</a>
+        <a href="page15.html" class="button button-5">Θεσσαλία</a>
+        <a href="page16.html" class="button button-1">Επτάνησα</a>
+        <a href="page17.html" class="button button-2">Στερεά Ελλάδα</a>
+        <a href="page18.html" class="button button-3">Πελοπόννησος</a>
+        <a href="page19.html" class="button button-4">Νησιά Αιγαίου</a>
+        <a href="page20.html" class="button button-5">Κρήτη</a>
+        <a href="page1.html" class="button button-1">Αθήνα</a>
+        <a href="page2.html" class="button button-2">Θεσσαλονίκη</a>
+        <a href="page3.html" class="button button-3">Πάτρα</a>
+        <a href="page4.html" class="button button-4">Ηράκλειο</a>
+        <a href="page5.html" class="button button-5">Λάρισα</a>
+        <a href="page6.html" class="button button-1">Βόλος</a>
+        <a href="page7.html" class="button button-2">Ιωάννινα</a>
+        <a href="page8.html" class="button button-3">Τρίκαλα</a>
+        <a href="page9.html" class="button button-4">Χαλκίδα</a>
+        <a href="page10.html" class="button button-5">Σέρρες</a>
+        <a href="page11.html" class="button button-1">Αλεξανδρούπολη</a>
+        <a href="page12.html" class="button button-2">Ξάνθη</a>
+        <a href="page13.html" class="button button-3">Κατερίνη</a>
+        <a href="page14.html" class="button button-4">Αγρίνιο</a>
+        <a href="page15.html" class="button button-5">Καλαμάτα</a>
+        <a href="page16.html" class="button button-1">Καβάλα</a>
+        <a href="page17.html" class="button button-2">Χανιά</a>
+        <a href="page18.html" class="button button-3">Λαμία</a>
+        <a href="page19.html" class="button button-4">Κομοτηνή</a>
+        <a href="page20.html" class="button button-5">Ρόδος</a>
+        <a href="page1.html" class="button button-1">Δράμα</a>
+        <a href="page2.html" class="button button-2">Βέροια</a>
+        <a href="page3.html" class="button button-3">Κοζάνη</a>
+        <a href="page4.html" class="button button-4">Καρδίτσα</a>
+        <a href="page5.html" class="button button-5">Ρέθυμνο</a>
+        <a href="page6.html" class="button button-1">Πτολεμαΐδα</a>
+        <a href="page7.html" class="button button-2">Τρίπολη</a>
+        <a href="page8.html" class="button button-3">Κόρινθος</a>
+        <a href="page9.html" class="button button-4">Γέρακας</a>
+        <a href="page10.html" class="button button-5">Γιαννιτσά</a>
+        <a href="page11.html" class="button button-1">Μυτιλήνη</a>
+        <a href="page12.html" class="button button-2">Χίος</a>
+        <a href="page13.html" class="button button-3">Σαλαμίνα</a>
+        <a href="page14.html" class="button button-4">Ελευσίνα</a>
+        <a href="page15.html" class="button button-5">Κέρκυρα</a>
+        <a href="page16.html" class="button button-1">Πύργος</a>
+        <a href="page17.html" class="button button-2">Μέγαρα</a>
+        <a href="page18.html" class="button button-3">Κιλκίς</a>
+        <a href="page19.html" class="button button-4">Θήβα</a>
+        <a href="page20.html" class="button button-5">Άργος</a>
+        <a href="page1.html" class="button button-1">Άρτα</a>
+        <a href="page2.html" class="button button-2">Άρτεμη</a>
+        <a href="page3.html" class="button button-3">Λιβαδειά</a>
+        <a href="page4.html" class="button button-4">Ωραιόκαστρο</a>
+        <a href="page5.html" class="button button-5">Αίγιο</a>
+        <a href="page6.html" class="button button-1">Κως</a>
+        <a href="page7.html" class="button button-2">Κορωπί</a>
+        <a href="page8.html" class="button button-3">Πρέβεζα</a>
+        <a href="page9.html" class="button button-4">Σπάρτη</a>
+        <a href="page10.html" class="button button-5">Νάουσα</a>
+        <a href="page11.html" class="button button-1">Ορεστιάδα</a>
+        <a href="page12.html" class="button button-2">Περαία</a>
+        <a href="page13.html" class="button button-3">Έδεσσα</a>
+        <a href="page14.html" class="button button-4">Φλώρινα</a>
+        <a href="page15.html" class="button button-5">Αμαλιάδα</a>
+        <a href="page16.html" class="button button-1">Παλλήνη</a>
+        <a href="page17.html" class="button button-2">Θέρμη</a>
+        <a href="page18.html" class="button button-3">Βάρη</a>
+        <a href="page19.html" class="button button-4">Νέα Μάκρη</a>
+        <a href="page20.html" class="button button-5">Αλεξάνδρεια</a>
+    </div>
+    <footer>&copy; 2024 Anomologita</footer>
+
+    <script>
+        function filterButtons() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const buttonContainer = document.getElementById('buttonContainer');
+            const buttons = buttonContainer.getElementsByTagName('a');
+
+            for (let i = 0; i < buttons.length; i++) {
+                const button = buttons[i];
+                const txtValue = button.textContent || button.innerText;
+                if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                    button.style.display = "";
+                } else {
+                    button.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

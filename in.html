@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embedded Google Forms and Sheets</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        .iframe-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="rules-box" class="hidden">
+    <h2>Rules</h2>
+    <p>Please read and accept the rules below before proceeding.</p>
+    <ul>
+        <li>Rule 1: You must be at least 18 years old.</li>
+        <li>Rule 2: You agree to our terms and conditions.</li>
+        <li>Rule 3: No spamming allowed.</li>
+        <!-- Add more rules as needed -->
+    </ul>
+    <input type="checkbox" id="accept-rules" />
+    <label for="accept-rules">I accept the rules</label>
+    <button id="proceed-button" disabled>Proceed</button>
+</div>
+
+<div id="iframe-container" class="hidden">
+    <iframe id="form-iframe" src="https://docs.google.com/forms/d/e/1FAIpQLScHGrVw1jwkqLuJ074V_XhVfcU4j-Rs889rzXHtm_39UNRTZA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="500">Loading…</iframe>
+    <iframe id="sheet-iframe" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="500"></iframe>
+</div>
+
+<script>
+    document.getElementById('accept-rules').addEventListener('change', function() {
+        const proceedButton = document.getElementById('proceed-button');
+        proceedButton.disabled = !this.checked;
+    });
+
+    document.getElementById('proceed-button').addEventListener('click', function() {
+        localStorage.setItem('rulesAccepted', 'true');
+        showIframes();
+    });
+
+    function showIframes() {
+        document.getElementById('rules-box').classList.add('hidden');
+        document.getElementById('iframe-container').classList.remove('hidden');
+
+        // Update the src attribute of the sheet-iframe
+        const sheetIframe = document.getElementById('sheet-iframe');
+        sheetIframe.src = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRG04JholwQgsclsb9TK18dAZgZjtJcsRgh_O7CB2KooY7eUvKJ6I3vmkWcRE7Zp0Y0MOgk9TInsoV_/pubhtml?gid=1902517968&single=true&widget=true&headers=false';
+    }
+
+    window.onload = function() {
+        if (localStorage.getItem('rulesAccepted') === 'true') {
+            showIframes();
+        } else {
+            document.getElementById('rules-box').classList.remove('hidden');
+        }
+    }
+</script>
+
+</body>
+</html>

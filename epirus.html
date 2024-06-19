@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anomologita</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin: 20px 0;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            display: inline-block;
+            transition: background 0.3s ease;
+        }
+        .button-1 {
+            background: linear-gradient(45deg, #ff6f61, #ff9472);
+        }
+        .button-2 {
+            background: linear-gradient(45deg, #42e695, #3bb2b8);
+        }
+        .button-3 {
+            background: linear-gradient(45deg, #ff7e5f, #feb47b);
+        }
+        .button-4 {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+        .button:hover {
+            filter: brightness(1.1);
+        }
+        footer {
+            text-align: center;
+            width: 100%;
+            color: #555;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Anomologita</h1>
+    <div class="button-container">
+        <a href="arta.html" class="button button-1">Άρτα </a>
+        <a href="thesprotia.html" class="button button-2">Θεσπρωτία </a>
+        <a href="ioannina.html" class="button button-3">Ιωάννινα </a>
+        <a href="preveza.html" class="button button-4">Πρέβεζα</a>
+    </div>
+    <footer>&copy; 2024 Anomologita</footer>
+</body>
+</html>
